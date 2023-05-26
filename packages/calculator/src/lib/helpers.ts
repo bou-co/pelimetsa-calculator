@@ -17,13 +17,13 @@ import { GamingPlatform, PlatformType, GameType } from './types';
  * The value 0.5058571429 tCO2 represents the emissions produced by a single round-trip in economy class.
  * It is the average of flights from Helsinki to
  *
- * 1 x Pariisi,
+ * 1 x Paris,
  * 1 x Dubrovnik,
- * 1 x Lontoo,
- * 1 x LA,
+ * 1 x London,
+ * 1 x Los Angeles,
  * 1 x New York,
- * 1 x Tokio,
- * 1 x Soul,
+ * 1 x Tokyo,
+ * 1 x Seoul,
  *
  * and back (ICAO calculator).
  * Results in tCO2 / year
