@@ -2,12 +2,12 @@ import {
   singleRountripAverageEmissions,
   tCO2PerEmployee,
   pcEnergyConsumption_kWh,
-  usaPowerGrid_tCO2PerKWh,
+  usaPowerGrid_tCO2_kWh,
   daysInYear,
   averageOnlinePlaytimeInHours,
   mobileCO2tFactorPerHour,
   phoneRechargeTimeInHours,
-  phoneChargerPower_kW,
+  phoneChargerPower_kWh,
   consoleEnergyConsumption_kWh,
 } from './constants';
 import { GamingPlatform, PlatformType, GameType } from './types';
@@ -51,7 +51,7 @@ export const getPersonnelEmissions = (numberOfPersonnel = 0) =>
 /**
  * @see pcEnergyConsumption_kWh
  * @see consoleEnergyConsumption_kWh
- * @see phoneChargerPower_kW
+ * @see phoneChargerPower_kWh
  * @see phoneRechargeTimeInHours
  *
  * Results in tCO2 / year
@@ -80,7 +80,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
         purchasedGamesAmount *
         averagePlayTime *
         pcEnergyConsumption_kWh *
-        usaPowerGrid_tCO2PerKWh;
+        usaPowerGrid_tCO2_kWh;
     } else if (
       platformType === PlatformType.PC &&
       gameType === GameType.MultiPlayer
@@ -91,7 +91,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
         daysInYear *
         averageOnlinePlaytimeInHours *
         pcEnergyConsumption_kWh *
-        usaPowerGrid_tCO2PerKWh;
+        usaPowerGrid_tCO2_kWh;
     } else if (platformType === PlatformType.Mobile) {
       //Mobile multiplayer online
       totalPlayerEmission +=
@@ -100,8 +100,8 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
         (sessionLength / 60) *
         mobileCO2tFactorPerHour *
         phoneRechargeTimeInHours *
-        phoneChargerPower_kW *
-        usaPowerGrid_tCO2PerKWh;
+        phoneChargerPower_kWh *
+        usaPowerGrid_tCO2_kWh;
     } else if (
       platformType === PlatformType.Console &&
       gameType === GameType.SinglePlayer
@@ -111,7 +111,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
         purchasedGamesAmount *
         averagePlayTime *
         consoleEnergyConsumption_kWh *
-        usaPowerGrid_tCO2PerKWh;
+        usaPowerGrid_tCO2_kWh;
     } else if (
       platformType === PlatformType.Console &&
       gameType === GameType.MultiPlayer
@@ -122,7 +122,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
         daysInYear *
         averageOnlinePlaytimeInHours *
         consoleEnergyConsumption_kWh *
-        usaPowerGrid_tCO2PerKWh;
+        usaPowerGrid_tCO2_kWh;
     }
   });
 
