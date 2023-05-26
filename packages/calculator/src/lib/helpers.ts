@@ -60,7 +60,7 @@ export const getPersonnelEmissions = (numberOfPersonnel = 0) =>
  * @returns number
  */
 export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
-  let totalPlayerEmission = 0;
+  let totalPlayerEmissions = 0;
 
   gamingPlatforms.forEach((entry) => {
     const {
@@ -76,7 +76,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
       gameType === GameType.SinglePlayer
     ) {
       //PC single player offline
-      totalPlayerEmission +=
+      totalPlayerEmissions +=
         purchasedGamesAmount *
         averagePlayTime *
         pcEnergyConsumption_kWh *
@@ -86,7 +86,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
       gameType === GameType.MultiPlayer
     ) {
       //PC multiplayer online
-      totalPlayerEmission +=
+      totalPlayerEmissions +=
         dailyActiveUsers *
         daysInYear *
         averageOnlinePlaytimeInHours *
@@ -94,7 +94,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
         usaPowerGrid_tCO2_kWh;
     } else if (platformType === PlatformType.Mobile) {
       //Mobile multiplayer online
-      totalPlayerEmission +=
+      totalPlayerEmissions +=
         dailyActiveUsers *
         daysInYear *
         (sessionLength / 60) *
@@ -107,7 +107,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
       gameType === GameType.SinglePlayer
     ) {
       //Console single player offline
-      totalPlayerEmission +=
+      totalPlayerEmissions +=
         purchasedGamesAmount *
         averagePlayTime *
         consoleEnergyConsumption_kWh *
@@ -117,7 +117,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
       gameType === GameType.MultiPlayer
     ) {
       //Console multiplayer online
-      totalPlayerEmission +=
+      totalPlayerEmissions +=
         dailyActiveUsers *
         daysInYear *
         averageOnlinePlaytimeInHours *
@@ -126,7 +126,7 @@ export const getPlayerEmissions = (gamingPlatforms: GamingPlatform[]) => {
     }
   });
 
-  return totalPlayerEmission;
+  return totalPlayerEmissions;
 };
 
 export const roundToNearestTen = (value: number) => {
