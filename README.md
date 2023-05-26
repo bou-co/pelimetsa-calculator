@@ -24,7 +24,7 @@ At the [Pelimetsä-website](https://pelimetsa.fi/) you can see one implementatio
 
 ### Example input values for calculateEmissions function
 
-```json
+```ts
 players: [
   {
     platformType: "pc",
@@ -62,7 +62,7 @@ other: 10,
 
 ### Example return values for calculateEmissions function
 
-```json
+```ts
 donationSumInEuros: 31500,
 emissionPercentages: {
   other: 2.2180976168917637,
