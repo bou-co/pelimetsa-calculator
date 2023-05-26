@@ -35,7 +35,7 @@ export const getTravelEmissions = (flightsPerYear = 0) =>
   Number(flightsPerYear) * singleRountripAverageEmissions;
 
 /**
- *@see tCO2PerEmployee
+ * @see tCO2PerEmployee
  * The value 0.761 tCO2 consists of:
  * - updating equipment (new laptop, phone, etc.) every third year: 0.1606333333 tCO2
  * - the office (electricity, cooling, heating, waste and WFH): 0.6 tCO2
