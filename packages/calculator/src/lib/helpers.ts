@@ -28,11 +28,11 @@ import { GamingPlatform, PlatformType, GameType } from './types';
  * and back (ICAO calculator).
  * Results in tCO2 / year
  *
- * @param numberOfFlightsPerYear number
+ * @param flightsPerYear number
  * @returns number
  */
-export const getTravelEmissions = (numberOfFlightsPerYear = 0) =>
-  Number(numberOfFlightsPerYear) * singleRountripAverageEmissions;
+export const getTravelEmissions = (flightsPerYear = 0) =>
+  Number(flightsPerYear) * singleRountripAverageEmissions;
 
 /**
  *@see tCO2PerEmployee
