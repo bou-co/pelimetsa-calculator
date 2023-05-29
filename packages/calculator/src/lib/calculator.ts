@@ -1,8 +1,4 @@
-import {
-  defaultDonationSumInEuros,
-  squareMetre,
-  squareMetresInHectare,
-} from './constants';
+import { pricePerCO2TonneInEuros, pricePerHectare } from './constants';
 import {
   getPersonnelEmissions,
   getPlayerEmissions,
@@ -43,9 +39,9 @@ export const calculateEmissions = (data: EmissionsData): EmissionResults => {
 
   //calculate donations
   const donationSumInEuros =
-    totalCarbonEmissionsPerYear * defaultDonationSumInEuros;
-  const protectedForestAreaInHectares =
-    (donationSumInEuros * squareMetre) / squareMetresInHectare;
+    totalCarbonEmissionsPerYear * pricePerCO2TonneInEuros;
+
+  const protectedForestAreaInHectares = donationSumInEuros / pricePerHectare;
 
   return {
     totalCarbonEmissionsPerYear,

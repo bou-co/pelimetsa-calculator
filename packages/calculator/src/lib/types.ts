@@ -6,14 +6,14 @@ export interface EmissionsData {
 }
 
 export enum PlatformType {
-  PC = "pc",
-  Console = "console",
-  Mobile = "mobile",
+  PC = 'pc',
+  Console = 'console',
+  Mobile = 'mobile',
 }
 
 export enum GameType {
-  SinglePlayer = "singlePlayer",
-  MultiPlayer = "multiPlayer",
+  SinglePlayer = 'singlePlayer',
+  MultiPlayer = 'multiPlayer',
 }
 
 export interface GamingPlatform {
@@ -21,8 +21,8 @@ export interface GamingPlatform {
   gameType: GameType;
   dailyActiveUsers?: number;
   purchasedGamesAmount?: number;
-  averagePlayTime: number;
-  sessionLength: number;
+  averagePlayTime: number; // in hours for PC and console games
+  sessionLength: number; // in minutes for mobile games
 }
 
 export interface EmissionResults {
